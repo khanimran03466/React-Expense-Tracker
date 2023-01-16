@@ -1,0 +1,54 @@
+.new-expenses {max-width: 900px;margin: 50px auto;background-color: rgb(121, 121, 218); padding: 20px 30px; }
+.new-expense__control {display: flex;}
+
+.new-expenses form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.new-expense__control {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(50% - 10px);
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.new-expense__control label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.new-expense__control input {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.new-expense__action{
+    margin-bottom: 15px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.new-expense__action button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: navy;
+    color: #fff;
+    text-decoration: inherit;
+
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left, #36ab5b, #825dba);
+}
+

@@ -1,0 +1,13 @@
+.expense-wrapper {max-width: 900px; margin: auto; background-color: rgb(27, 25, 25); padding: 30px; border-radius: 15px;margin-bottom: 50px;}
+
+.expense-item {display: flex; background-color: rgb(82, 64, 64); color: white; }
+.expense-item:not(:last-child){margin-bottom: 20px;}
+
+.expense-item-date, .expense-item-description, .expense-item-amount {flex: 1;display: flex;align-items: center;  }
+
+.expense-item-amount {justify-content: flex-end;}
+
+.expense-item-amount p {border-radius: 15px;background-color: darkblue;font-size: 1.1rem;font-weight: 600; padding: 10px 20px; margin: 0;border: 1px solid #fff;}
+
+.expense-item-wrapper {display: flex; flex: .5;}
+.expense-day { font-size: 1.5rem; margin-bottom: 0.3rem;font-weight: 600; }

@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Expenses from "./components/expenses/Expenses";
+import NewExpenses from "./components/newExpenses/NewExpenses";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let DUMMY_DATA = [
+    {
+        id: "e1",
+        title :"School Fee",
+        amount : 300,
+        date : new Date(2022, 6, 27)
+    },
+    {
+        id: "e2",
+        title :"Books",
+        amount : 200,
+        date : new Date(2022, 6, 28)
+    },
+    {
+        id: "e3",
+        title :"Pizza",
+        amount : 100,
+        date : new Date(2022, 6, 28)
+    },
+    {
+        id: "e4",
+        title :"Food in resturent",
+        amount : 600,
+        date : new Date(2022, 6, 28)
+    }
+];
+
+const App = () => {
+
+    
+    const [expenses, setExpenses] = useState(DUMMY_DATA);    
+
+    const getEnterDataFromChild = (EnteredData) => {
+        const updatedData = [EnteredData, ...DUMMY_DATA];
+        setExpenses(updatedData);
+        
+    }
+
+    localStorage.setItem("expensesData", JSON.stringify(expenses) );
+    let getDataFromLocalStorage = JSON.parse(localStorage.getItem("expensesData"));
+
+    
+
+    return ( 
+        <div className="wrapper ">
+
+            <NewExpenses getEnterDataFromChild={getEnterDataFromChild} />
+            
+            <Expenses expenses={getDataFromLocalStorage} />
+            
+        </div>
+     );
 }
-
+ 
 export default App;
